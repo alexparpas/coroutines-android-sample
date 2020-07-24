@@ -5,7 +5,7 @@ import com.alexparpas.facts.domain.entities.Fact
 import com.alexparpas.facts.domain.repos.FactsDataSource
 
 class FactsRepository : FactsDataSource {
-    override fun getFacts(): List<Fact> =
+    override suspend fun getFacts(): List<Fact> =
         listOf(
             ApiFact(
                 id = "123",
@@ -33,7 +33,7 @@ class FactsRepository : FactsDataSource {
             )
         )
 
-    override fun getFacts(category: String): List<Fact> =
+    override suspend fun getFacts(category: String): List<Fact> =
         listOf(
             ApiFact(
                 id = "234",
@@ -53,7 +53,7 @@ class FactsRepository : FactsDataSource {
             )
         )
 
-    override fun getFavouriteFacts(uuid: String): List<Fact> =
+    override suspend fun getFavouriteFacts(uuid: String): List<Fact> =
         listOf(
             ApiFact(
                 id = "234",
@@ -65,7 +65,7 @@ class FactsRepository : FactsDataSource {
             )
         )
 
-    override fun getRandomFact(): Fact =
+    override suspend fun getRandomFact(): Fact =
         ApiFact(
             id = "123",
             tip = "Hello World 1",
@@ -75,7 +75,7 @@ class FactsRepository : FactsDataSource {
             provider = null
         )
 
-    override fun getRandomFact(category: String): Fact =
+    override suspend fun getRandomFact(category: String): Fact =
         ApiFact(
             id = "123",
             tip = "Hello World 1",
@@ -85,7 +85,7 @@ class FactsRepository : FactsDataSource {
             provider = null
         )
 
-    override fun getHistoricFact(): Fact =
+    override suspend fun getHistoricFact(): Fact =
         ApiFact(
             id = "123",
             tip = "Hello World 1",
@@ -95,7 +95,7 @@ class FactsRepository : FactsDataSource {
             provider = null
         )
 
-    override fun getDailyFact(): Fact =
+    override suspend fun getDailyFact(): Fact =
         ApiFact(
             id = "123",
             tip = "Hello World 1",
